@@ -15,9 +15,13 @@ if (!POSTS.length) {
   console.error("POSTS is empty, nothing to check");
   process.exit(1);
 }
-if (!DISCORD_WEBHOOK) {
-  console.warn("DISCORD_WEBHOOK is empty, notifications will not be sent");
-}
+
+console.log(`Posts (${POSTS.length}):`);
+for (const url of POSTS) console.log(`  ${url}`);
+console.log(
+  `Webhook: ${DISCORD_WEBHOOK ? "set" : "not set, notifications will not be sent"}`,
+);
+console.log(`Interval: ${INTERVAL_MS / 1000} s`);
 
 // Корректная остановка контейнера (node как PID 1 игнорирует сигналы без обработчика)
 for (const sig of ["SIGTERM", "SIGINT"]) process.on(sig, () => process.exit(0));
