@@ -1,0 +1,14 @@
+{
+  "name": "mcgl-online-check",
+  "private": true,
+  "description": "Discord notifications when forum.minecraft-galaxy.ru users go online/offline",
+  "main": "check.js",
+  "scripts": {
+    "start": "node check.js"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "license": "MIT",
+  "type": "commonjs"
+}
